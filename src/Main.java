@@ -28,9 +28,36 @@ public class Main {
             sc.nextLine();
 
             if (o == 0) {
-
+                for (int i = 0; i < l.books.size(); i++) {
+                    System.out.println(l.books.get(i).getTitle()+","+l.books.get(i).getAuthor());
+                }
             } else if (o == 1) {
+                System.out.println("Enter isbn number:");
+                String isbn = sc.nextLine();
+                if (Book.is_isbn_correct(isbn) == true) {
+                    System.out.println("Enter book title:");
+                    String title = sc.nextLine();
 
+                    System.out.println("Enter author name:");
+                    String author = sc.nextLine();
+                    Book book = new Book(isbn,title,author);
+
+                    l.books.add(book);
+                } else {
+                    System.out.println("Isbn must consist of 5 digits");
+                }
+            } else if (o == 2) {
+                System.out.println("Enter isbn number: ");
+                String isbn = sc.nextLine();
+                for (int i = 0; i <l.books.size(); i++) {
+                    if (l.books.get(i).getIsbn().equals(isbn)) {
+                        l.books.remove(i);
+                    }
+                }
+            } else if (o == 3) {
+                
+            } else if (0 == 4) {
+                
             }
 
         }

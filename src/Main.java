@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        Library l = new Library();
         int o = -1;
 
         while (o != 100) {
@@ -26,6 +27,11 @@ public class Main {
             o = sc.nextInt();
             sc.nextLine();
 
+            if (o == 0) {
+
+            } else if (o == 1) {
+
+            }
 
         }
 

@@ -25,7 +25,7 @@ public class Book {
     }
 
     public void setIsbn(String isbn) {
-        this.isbn = isbn;
+        if(is_isbn_correct(isbn) == true) this.isbn = isbn;
     }
 
     public String getTitle() {
@@ -33,7 +33,7 @@ public class Book {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        if (title.length() >= 3) this.title = title;
     }
 
     public String getAuthor() {
@@ -41,7 +41,7 @@ public class Book {
     }
 
     public void setAuthor(String author) {
-        this.author = author;
+        if (author.length() >= 2) this.author = author;
     }
 
     public int getPublication_year() {
@@ -50,6 +50,23 @@ public class Book {
 
     public void setPublication_year(int publication_year) {
         this.publication_year = publication_year;
+    }
+
+    public static boolean is_isbn_correct(String isbn) {
+        if (isbn.length() == 5) {
+            boolean hata = false;
+            for (int i = 0; i<5; i++) {
+                if(Character.isDigit(isbn.charAt(i)) == false) {
+                    hata = true;
+                }
+            }
+            if (hata == true) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

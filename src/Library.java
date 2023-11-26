@@ -1,4 +1,10 @@
+import java.util.Vector;
+
 public class Library {
-    Book[] books = new Book[100];
+    Vector<Book> books = new Vector<>();
+    Vector<String> members = new Vector<>();
+    Vector<String>  employees = new Vector<>();
+
+
 
 }

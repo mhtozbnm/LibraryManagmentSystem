@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.Scanner;
 
 public class Main {
@@ -56,8 +57,38 @@ public class Main {
                 }
             } else if (o == 3) {
                 
-            } else if (0 == 4) {
+            } else if (o == 4) {
+                System.out.println("Enter Tc:");
+                String tc = sc.nextLine();
+                if (Member.is_tc_correct(tc)) {
+                    System.out.println("Enter name:");
+                    String name = sc.nextLine();
+
+                    System.out.println("Enter surname:");
+                    String surname = sc.nextLine();
+
+                    Member m = new Member(tc,name,surname);
+                    l.members.add(m);
+                    System.out.println(l.members.get(0).getName());
+                } else {
+                    System.out.println("Tc number must consist of 11 digits and char");
+                }
+            } else if (o == 5) {
+                System.out.println("Enter tc:");
+                String tc = sc.nextLine();
+                for (int i =1; i < l.members.size(); i++) {
+                    if (l.members.get(i).getUserTc().equals(tc)) {
+                        l.members.remove(i);
+                        System.out.println(l.members.get(i).getUserTc() + " Tc numaları kullanıcı silindi");
+                    } else {
+                        System.out.println("Öyle bir kullancı bulunamadı");
+                    }
+                }
+            } else if (o == 6) {
                 
+            } else {
+                System.out.println("Hatalı tıklama");
+                break;
             }
 
         }

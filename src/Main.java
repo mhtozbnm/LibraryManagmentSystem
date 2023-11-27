@@ -35,7 +35,7 @@ public class Main {
             } else if (o == 1) {
                 System.out.println("Enter isbn number:");
                 String isbn = sc.nextLine();
-                if (Book.is_isbn_correct(isbn) == true) {
+                if (Book.is_isbn_correct(isbn)) {
                     System.out.println("Enter book title:");
                     String title = sc.nextLine();
 
@@ -56,7 +56,9 @@ public class Main {
                     }
                 }
             } else if (o == 3) {
-                
+                System.out.println("Enter isbn number: ");
+                String isbn = sc.nextLine();
+                l.searchBooksByISBN(isbn);
             } else if (o == 4) {
                 System.out.println("Enter Tc:");
                 String tc = sc.nextLine();
@@ -86,6 +88,32 @@ public class Main {
                 }
             } else if (o == 6) {
                 
+            } else if (o == 7) {
+                System.out.println("Enter tc: ");
+                String tc = sc.nextLine();
+                if (Member.is_tc_correct(tc)) {
+                    System.out.println("Enter name:");
+                    String name = sc.nextLine();
+
+                    System.out.println("Entar surname:");
+                    String surname = sc.nextLine();
+
+                    System.out.println("Enter department:");
+                    String d = sc.nextLine();
+
+                    Employee e = new Employee(tc,name,surname,d);
+
+                }
+            } else if (o == 8) {
+                System.out.println("Enter employee tc: ");
+                String tc = sc.nextLine();
+                for (int i = 0; i < l.employees.size(); i++){
+                    if (l.employees.get(i).getUserTc().equals(tc)) {
+                        l.employees.remove(i);
+                        System.out.println(l.employees.get(i).getName() + l.employees.get(i).getSurname() + " çalışan silinde");
+                    }
+
+                }
             } else {
                 System.out.println("Hatalı tıklama");
                 break;

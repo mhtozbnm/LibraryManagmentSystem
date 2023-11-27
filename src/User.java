@@ -9,6 +9,10 @@ public class User {
         this.surname = surname;
     }
 
+    public User() {
+
+    }
+
     public String getUserTc() {
         return userTc;
     }
@@ -24,7 +28,7 @@ public class User {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name.length() >= 2) this.name = name;
     }
 
     public String getSurname() {
@@ -32,7 +36,7 @@ public class User {
     }
 
     public void setSurname(String surname) {
-        this.surname = surname;
+        if (surname.length() >= 2) this.surname = surname;
     }
 
     public static boolean is_tc_correct(String userTc) {
